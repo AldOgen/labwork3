@@ -31,9 +31,6 @@ namespace labwork2
         {
             ListData.Add(item);
             ++Count;
-
-            ListData[Count - 1].PropertyChanged += PropertyChangedEventHandler;
-
             DataChanged(this, new DataChangedEventArgs(ChangeInfo.Add,
                     item.Freq_field));
         }
@@ -62,9 +59,11 @@ namespace labwork2
                 V2DataOnGrid v2_data_on_grid = new V2DataOnGrid(0.0, "Default info", new double[] { 0.01, 0.01 }, new int[] { 3, 3 });
                 v2_data_on_grid.InitRandom(-10.0f, 10.0f);
                 ListData.Add(v2_data_on_grid);
+                ListData[ListData.Count - 1].PropertyChanged += PropertyChangedEventHandler;
                 V2DataCollection v2_data_collection = new V2DataCollection(0.0, "Default info");
                 v2_data_collection.InitRandom(3, 10.0f, 10.0f, -10.0f, 10.0f);
                 ListData.Add(v2_data_collection);
+                ListData[ListData.Count - 1].PropertyChanged += PropertyChangedEventHandler;
             }
         }
 

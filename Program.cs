@@ -17,9 +17,9 @@ namespace labwork2
                 new double[] { 0.01, 0.01 }, new int[] { 5, 5 });
 
             main_collection.Add(data_on_grid);
-            main_collection[3] = main_collection[4];
-            main_collection[0].Description = "Service info";
-            main_collection[0].Freq_field = 21.0f;
+            main_collection[3] = new V2DataCollection(1.0f, "Desc");
+            main_collection[2].Description = "Service info";
+            main_collection[2].Freq_field = 21.0f;
             main_collection.Remove("Service info", 21.0f);
         }
 
